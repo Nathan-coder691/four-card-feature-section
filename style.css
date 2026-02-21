@@ -1,0 +1,120 @@
+:root{
+	--primary-red:hsl(0, 78%, 62%);
+	--primary-cyan:hsl(180, 62%, 55%);
+	--primary-orange:hsl(34, 97%, 64%);
+	--primary-blue:hsl(212, 86%, 64%);
+	--neutral-500-grey:hsl(234, 12%, 34%);
+	--neutral-400-grey:hsl(212, 6%, 44%);
+	--white:hsl(0, 0%, 100%);
+}
+*{
+	box-sizing: border-box;
+}
+body{
+	margin: 0;
+	padding: 0;
+	font-family: poppins;
+	box-sizing: border-box;
+	
+}
+p{
+	color: var(--neutral-400-grey);
+}
+h1{
+	color: var(--neutral-500-grey);
+}
+main{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	padding: 40px;
+
+}
+.h1{
+	font-weight: 200;
+	margin-top: 90px;
+	margin-bottom: 0;
+}
+.h2{
+	font-weight: 600;
+	margin-top: 0;
+}
+.p{
+	max-width: 50%;
+	text-align: center;
+	margin-bottom: 30px;
+}
+.bigCards{
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	grid-template-rows: repeat(2, 1fr);
+	align-items: center;
+	margin: 0px;
+	text-align: left;
+    gap: 3rem;
+}
+.bigCards > div{
+	flex: 1;
+}
+.a { grid-area: 1 / 1 / 3/ 2; } /* Spans two rows on the left */
+.c { grid-area: 1 / 2 / 2 / 3; } /* Top Middle */
+.d { grid-area: 2 / 2 / 3 / 3; } /* Bottom Middle */
+.b { grid-area: 1 / 3 / 3 / 4; } /* Spans two rows on the right */
+.card svg{
+    float: right;
+}
+.card{
+box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
+	padding:38px 32px;
+	flex: 1;
+	min-height: 250px;
+	max-width: 350px;
+	width: 100%;
+	position: relative;
+	border-top: 4px solid;
+	border-radius: 8px;
+}
+.a { border-color: var(--primary-cyan); }
+.c { border-color: var(--primary-red); }
+.d { border-color: var(--primary-orange); }
+.b { border-color: var(--primary-blue); }
+h2{
+	color: var(--neutral-500-grey);
+}
+
+@media (max-width: 375px){
+	.bigCards{
+		grid-template-columns: 1fr;
+		grid-template-rows: auto;
+		gap: 2rem;
+	}
+	.p{
+		max-width: 100%;
+	}
+	.a, .b, .c, .d{
+		grid-area: auto;
+	}
+	.card{
+		max-width: 350px;
+		width: 100%;
+	}
+	
+}
+@media ( max-width: 850px){
+	.bigCards{
+		grid-template-columns: 1fr;
+		grid-template-rows: auto;
+		gap: 2rem;
+	}
+	.p{
+		max-width: 100%;
+	}
+	.a, .b, .c, .d{
+		grid-area: auto;
+	}
+	.card{
+		max-width: 350px;
+		width: 100%;
+	}
+}
